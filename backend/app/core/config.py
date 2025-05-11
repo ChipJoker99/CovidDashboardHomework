@@ -15,7 +15,7 @@ class Settings:
     PROJECT_VERSION: str = "0.1.0"
 
     BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    DATABASE_DIR = os.path.join(BACKEND_DIR, "data")
+    DATABASE_DIR = os.path.join(BACKEND_DIR, "app", "data")
     
     if not os.path.exists(DATABASE_DIR):
         os.makedirs(DATABASE_DIR, exist_ok=True)
