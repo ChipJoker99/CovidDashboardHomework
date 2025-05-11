@@ -35,7 +35,6 @@ The core philosophy behind this project was to build a robust, maintainable, and
 The selection of technologies was driven by a balance of performance, developer productivity, ecosystem maturity, and relevance to modern web development, moreover than my personal acknowledge.
 
 * **Backend:**
-
   * **Python 3.10+ & FastAPI:**
     * *Why Python?* Its extensive data science ecosystem, readability, and large community make it a strong choice for data-centric applications.
     * *Why FastAPI?* A modern, high-performance web framework built on Starlette and Pydantic. It offers asynchronous request handling out-of-the-box (crucial for I/O-bound tasks like fetching external data), automatic data validation and serialization via Pydantic, and auto-generated interactive API documentation (Swagger UI/ReDoc), significantly boosting development speed and API quality.
@@ -48,26 +47,21 @@ The selection of technologies was driven by a balance of performance, developer 
   * **`httpx`:** A modern, fully featured asynchronous HTTP client for Python, aligning perfectly with FastAPI's async nature for non-blocking external API calls. This is a better solution rather than `requests`.
   * **`openpyxl`:** The standard Python library for reading/writing Excel 2010 xlsx/xlsm/xltx/xltm files, chosen for its comprehensive feature set for the XLSX export requirement.
   * **Pydantic:** Used by FastAPI for data validation, serialization, and settings management. It ensures data integrity at the API boundary and provides clear error messages.
-* **Frontend:**
 
+* **Frontend:**
   * **React (with TypeScript):**
     * *Why React?* A leading JavaScript library for building user interfaces, known for its component-based architecture, declarative programming model, and vast ecosystem.
     * *Why TypeScript?* Adds static typing to JavaScript, significantly improving code quality, maintainability, and developer experience by catching errors early and enhancing code autocompletion and refactoring.
   * **Vite:** A next-generation frontend tooling solution providing an extremely fast development server (leveraging native ES modules) and optimized builds. Chosen over Create React App for its superior speed and modern DX.
   * **`axios`:** A popular, promise-based HTTP client for the browser and Node.js, making API communication padrões and straightforward.
   * **Font Awesome (`@fortawesome/react-fontawesome`):** Integrated for a richer UI with scalable vector icons, using the React component library for optimal integration and tree-shaking.
-* **Development & Tooling:**
 
-  * **Git & GitHub:** Standard for version control and collaboration/submission.
-  * **Python `venv`:** For isolated Python environments, ensuring dependency consistency.
-  * **ESLint/Prettier (Assumed for Frontend):** Even if they are widely used, I would never use them; the could break the code logic.
-  * **Black/Flake8 (Assumed for Backend):** Even if they are widely used, I would never use them; the could break the code logic.
 * **Development & Tooling:**
-
   * **Git & GitHub:** Standard for version control and collaboration/submission.
   * **Python `venv`:** For isolated Python environments, ensuring dependency consistency.
   * **Code Formatting & Linting (Recommended):**
-    * *(These tools were not completely run during this exercise but I would use them for larger projects.)*
+    * *These tools were not completely run during this exercise.*
+    * *Even if they are widely used, I would never use them; they could break the code logic.*
     * **Frontend (React/TypeScript):** **ESLint** (often pre-configured by Vite/CRA) for linting and **Prettier** for code formatting.
     * **Backend (Python):** **Black** for code formatting and **Flake8** (or **Ruff**) for linting.
 
