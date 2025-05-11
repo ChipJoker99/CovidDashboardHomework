@@ -10,7 +10,7 @@ class CRUDRegionalCovidData:
 
     def get_latest_submission_date(self, db: Session) -> Optional[date]:
         """
-        Recupera la data di sottomissione più recente presente nel database.
+        Retrieves the most recent submission date present in the database.
         """
         latest_record_tuple = db.query(RegionalCovidData.submission_date).order_by(desc(RegionalCovidData.submission_date)).first()
         return latest_record_tuple[0] if latest_record_tuple else None
@@ -23,7 +23,7 @@ class CRUDRegionalCovidData:
         sort_order: Optional[str] = "desc"
     ) -> List[RegionalCovidData]:
         """
-        Recupera i dati COVID regionali per una data specifica, con opzioni di ordinamento.
+        Retrieves regional COVID data for a specific date, with optional sorting.
         """
         query = db.query(RegionalCovidData).filter(RegionalCovidData.submission_date == submission_date)
 
@@ -45,7 +45,7 @@ class CRUDRegionalCovidData:
         self, db: Session, submission_date: date, region_code: str
     ) -> Optional[RegionalCovidData]:
         """
-        Recupera un singolo record di dati COVID regionali per data e codice regione.
+        Retrieves a single regional COVID data record by date and region code.
         """
         return db.query(RegionalCovidData).filter(
             RegionalCovidData.submission_date == submission_date,
@@ -56,9 +56,9 @@ class CRUDRegionalCovidData:
         self, db: Session, *, data_in_list: List[RegionalDataCreate]
     ) -> List[RegionalCovidData]:
         """
-        Crea nuovi record di dati COVID regionali o aggiorna quelli esistenti
-        se un record per la stessa data e codice regione è già presente (UPSERT).
-        Questo viene fatto per una lista di dati.
+        Creates new regional COVID data records or updates existing ones
+        if a record with the same date and region code is already present (UPSERT).
+        This is done for a list of data items.
         """
         created_or_updated_records = []
         for data_in in data_in_list:
@@ -89,7 +89,7 @@ class CRUDRegionalCovidData:
 
     def create(self, db: Session, *, obj_in: RegionalDataCreate) -> RegionalCovidData:
         """
-        Crea un singolo nuovo record (non usato direttamente se usiamo create_or_update_bulk).
+        Creates a single new record.
         """
         db_obj = RegionalCovidData(**obj_in.model_dump())
         db.add(db_obj)
@@ -99,7 +99,7 @@ class CRUDRegionalCovidData:
 
     def data_exists_for_date(self, db: Session, submission_date: date) -> bool:
         """
-        Controlla se esistono dati per una specifica data nel database.
+        Creates a single new record (not used directly if create_or_update_bulk is used).
         """
         return db.query(RegionalCovidData.id).filter(RegionalCovidData.submission_date == submission_date).first() is not None
 
