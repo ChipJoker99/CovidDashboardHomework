@@ -1,14 +1,10 @@
 main {
   flex-grow: 1;
   padding: 20px 15px;
-  /* Aggiunto padding sopra e sotto */
   width: 100%;
   max-width: 1200px;
-  /* Larghezza massima per il contenuto principale */
   margin: 0 auto;
-  /* Centra il blocco main */
   box-sizing: border-box;
-  /* Include padding e border nella larghezza/altezza */
 }
 
 .App {
