@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# COVID-19 Data Dashboard - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This directory contains the React (with TypeScript and Vite) frontend application for displaying COVID-19 data for Italy.
 
-Currently, two official plugins are available:
+## Responsibilities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   Providing a user interface to view regional COVID-19 data.
+*   Allowing users to select a specific date to view historical data.
+*   Enabling users to export data to an `.xlsx` file.
+*   Offering options to sort the displayed data.
+*   Communicating with the backend API to fetch and send data.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   React 18+
+*   TypeScript
+*   Vite (build tool and development server)
+*   `axios` (for HTTP requests to the backend API)
+*   `npm` (or `yarn`) for package management
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Project Structure (within `frontend/covid-dashboard/src/`)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*   `main.tsx`: Entry point of the React application.
+*   `App.tsx`: Main application component, routing (if any).
+*   `components/`: Reusable UI components (e.g., `RegionTable.tsx`, `DatePicker.tsx`).
+*   `services/`: Modules for interacting with the backend API (e.g., `apiService.ts`).
+*   `hooks/`: Custom React hooks.
+*   `contexts/`: React context for state management (if used).
+*   `pages/`: Top-level components representing different views/pages.
+*   `assets/`: Static assets like images, fonts (if not in `public/`).
+*   `styles/`: Global styles, CSS modules.
+*   `vite-env.d.ts`: TypeScript definitions for Vite environment variables.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Setup
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1.  **Navigate to the `frontend/covid-dashboard` directory:**
+    ```bash
+    cd path/to/your/project/COVID-DASHBOARD/frontend/covid-dashboard
+    ```
+
+2.  **Install dependencies:**
+    Using npm:
+    ```bash
+    npm install
+    ```
+    Or using Yarn:
+    ```bash
+    yarn
+    ```
+
+3.  **Environment Variables:**
+    *   This frontend application might need to know the base URL of the backend API.
+    *   Copy the example environment file:
+        ```bash
+        cp .env.example .env
+        ```
+    *   Modify `frontend/covid-dashboard/.env` to set `VITE_API_BACKEND_URL` (e.g., `VITE_API_BACKEND_URL=http://127.0.0.1:8000/api`).
+        The default in the code usually points to a standard local backend URL.
+
+## Available Scripts
+
+In the `frontend/covid-dashboard` directory, you can run several commands:
+
+### `npm run dev` or `yarn dev`
+
+Runs the app in development mode with Hot Module Replacement (HMR).
+Open [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal) to view it in the browser.
+The page will reload if you make edits. You will also see any lint errors in the console.
+
+### `npm run build` or `yarn build`
+
+Builds the app for production to the `dist` folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+The build is minified and the filenames include hashes.
+
+### `npm run preview` or `yarn preview`
+
+Serves the production build from the `dist` folder locally. This is a good way to check if the production build works correctly before deploying.
+
+## Connecting to the Backend
+
+Ensure the backend server is running. The frontend will make API calls to the URL specified by the `VITE_API_BACKEND_URL` environment variable (or a default if not set).
