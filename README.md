@@ -112,7 +112,7 @@ COVID-DASHBOARD/
 ## Prerequisites
 
 * Python 3.10 or higher (ensure `python` and `pip` are in your PATH)
-* Node.js LTS version (e.g., v18.x, v20.x) (ensure `node` and `npm` or `yarn` are in your PATH)
+* Node.js LTS version (e.g., v18.x, v20.x) (ensure `node` and `npm` are in your PATH)
 * Git
 
 ## Setup and Running the Application
@@ -134,7 +134,7 @@ Detailed instructions for setting up and running the backend and frontend can be
 2. **Start the Frontend Development Server:**
 
    * Navigate to the `frontend/covid-dashboard` directory.
-   * Run: `npm run dev` (or `yarn dev`)
+   * Run: `npm run dev`
    * The frontend application will typically be available at `http://localhost:5173` (Vite's default) or another port indicated in the terminal. Open this URL in your web browser.
 
 ## Data Source
