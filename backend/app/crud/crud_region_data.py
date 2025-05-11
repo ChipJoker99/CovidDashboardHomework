@@ -7,6 +7,14 @@ from app.models.region_data import RegionalCovidData
 from app.schemas.region_data_schema import RegionalDataCreate
 
 class CRUDRegionalCovidData:
+
+    def get_latest_submission_date(self, db: Session) -> Optional[date]:
+        """
+        Recupera la data di sottomissione più recente presente nel database.
+        """
+        latest_record_tuple = db.query(RegionalCovidData.submission_date).order_by(desc(RegionalCovidData.submission_date)).first()
+        return latest_record_tuple[0] if latest_record_tuple else None
+
     def get_by_date(
         self, 
         db: Session, 
