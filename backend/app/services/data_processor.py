@@ -138,8 +138,8 @@ if __name__ == "__main__":
         {'data': '2025-01-08T17:00:00', 'codice_regione': 13, 'denominazione_regione': 'Abruzzo', 'codice_provincia': 67, 'denominazione_provincia': "Pescara", 'totale_casi': 150},
         {'data': '2025-01-08T17:00:00', 'codice_regione': 12, 'denominazione_regione': 'Lazio',   'codice_provincia': 58, 'denominazione_provincia': "Roma", 'totale_casi': 1000},
         {'data': '2025-01-08T17:00:00', 'codice_regione': 12, 'denominazione_regione': 'Lazio',   'codice_provincia': 59, 'denominazione_provincia': "Latina", 'totale_casi': 200},
-        {'data': '2025-01-08T17:00:00', 'codice_regione': 13, 'denominazione_regione': 'Abruzzo', 'codice_provincia': 66, 'denominazione_provincia': "L'Aquila", 'totale_casi': ''}, # Test caso vuoto
-        {'data': '2025-01-08T17:00:00', 'codice_regione': 12, 'denominazione_regione': 'Lazio',   'codice_provincia': 60, 'denominazione_provincia': "Viterbo", 'totale_casi': None}, # Test None
+        {'data': '2025-01-08T17:00:00', 'codice_regione': 13, 'denominazione_regione': 'Abruzzo', 'codice_provincia': 66, 'denominazione_provincia': "L'Aquila", 'totale_casi': ''},
+        {'data': '2025-01-08T17:00:00', 'codice_regione': 12, 'denominazione_regione': 'Lazio',   'codice_provincia': 60, 'denominazione_provincia': "Viterbo", 'totale_casi': None},
     ]
 
     # --- CSV TEST MODULE ---
@@ -148,7 +148,7 @@ if __name__ == "__main__":
         {'data': '2020-03-15T17:00:00', 'codice_regione': '13', 'denominazione_regione': 'Abruzzo', 'codice_provincia': '067', 'denominazione_provincia': "Pescara", 'totale_casi': '25'},
         {'data': '2020-03-15T17:00:00', 'codice_regione': '12', 'denominazione_regione': 'Lazio',   'codice_provincia': '058', 'denominazione_provincia': "Roma", 'totale_casi': '300'},
         {'data': '2020-03-15T17:00:00', 'codice_regione': '12', 'denominazione_regione': 'Lazio',   'codice_provincia': '059', 'denominazione_provincia': "Latina", 'totale_casi': '50'},
-        {'data': '2020-03-15T17:00:00', 'codice_regione': '12', 'denominazione_regione': 'Lazio',   'codice_provincia': '059', 'denominazione_provincia': "Latina", 'totale_casi': ''}, # Test stringa vuota
+        {'data': '2020-03-15T17:00:00', 'codice_regione': '12', 'denominazione_regione': 'Lazio',   'codice_provincia': '059', 'denominazione_provincia': "Latina", 'totale_casi': ''},
         # --- MISSING 'denominazione_regione'
         {'data': '2020-03-15T17:00:00', 'codice_regione': '11', 'denominazione_provincia': "Arezzo", 'totale_casi': '10'},
         # --- ERROR 'totale_casi' (STR instead of INT)

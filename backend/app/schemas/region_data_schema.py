@@ -8,7 +8,7 @@ class RegionalDataInDBBase(BaseModel):
     submission_date: date
     region_code: str = Field(..., min_length=1, max_length=3)
     region_name: str = Field(..., min_length=1)
-    total_positive_cases: int = Field(..., ge=0) # ge=0 = greater than or equal to 0
+    total_positive_cases: int = Field(..., ge=0) # greater than or equal to 0
 
     class Config:
         from_attributes = True

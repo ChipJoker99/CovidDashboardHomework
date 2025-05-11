@@ -89,7 +89,6 @@ COVID-DASHBOARD/
 │   │   ├── api/            # API routers and endpoint definitions
 │   │   ├── __init__.py
 │   │   └── main.py         # FastAPI app instance, global middleware, startup
-│   ├── tests/              # (Placeholder) Pytest unit/integration tests
 │   ├── venv/               # Python virtual environment (git ignored)
 │   ├── .env.example        # Example environment variables
 │   ├── .env                # Local environment variables (git ignored)

@@ -55,5 +55,5 @@ async def read_root():
 async def shutdown_event():
     logger.info("Application shutdown...")
 
-# Per avviare Uvicorn da terminale (dalla cartella 'backend/'):
+# TO RUN UVICORN FROM TERMINAL (FROM 'backend/' FOLDER):
 # uvicorn app.main:app --reload
