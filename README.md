@@ -60,8 +60,8 @@ The selection of technologies was driven by a balance of performance, developer 
 
   * **Git & GitHub:** Standard for version control and collaboration/submission.
   * **Python `venv`:** For isolated Python environments, ensuring dependency consistency.
-  * **ESLint/Prettier (Assumed for Frontend):** Standard linting and code formatting tools to maintain code quality and consistency. (Mention if you actively used them).
-  * **Black/Flake8 (Assumed for Backend):** Similar tools for Python. (Mention if you actively used them).
+  * **ESLint/Prettier (Assumed for Frontend):** Even if they are widely used, I would never use them; the could break the code logic.
+  * **Black/Flake8 (Assumed for Backend):** Even if they are widely used, I would never use them; the could break the code logic.
 * **Development & Tooling:**
 
   * **Git & GitHub:** Standard for version control and collaboration/submission.
