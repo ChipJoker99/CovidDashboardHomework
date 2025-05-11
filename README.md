@@ -1,6 +1,6 @@
 # COVID-19 Italy Data Dashboard
 
-This project is a full-stack web application developed to demonstrate proficiency in fetching, processing, storing, and visualizing epidemiological data concerning the SARS-CoV-2 pandemic in Italy. The data is sourced from the official repository of the Italian Civil Protection Department. This application serves as a technical homework assignment, showcasing design choices, backend and frontend development skills.
+This project is a full-stack web application developed to demonstrate proficiency in fetching, processing, storing, and visualizing epidemiological data concerning the SARS-CoV-2 pandemic in Italy. The data is sourced from the official [repository](https://github.com/pcm-dpc/COVID-19) of the Italian Civil Protection Department. This application serves as a technical homework assignment, showcasing design choices, backend and frontend development skills.
 
 ## Project Philosophy & Design Rationale
 
