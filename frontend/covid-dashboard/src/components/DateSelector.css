@@ -1,35 +1,26 @@
-.date-selector-container {
+.date-selector-group {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    gap: 10px;
 }
 
-.date-selector-container label {
-    margin-right: 10px;
+.date-selector-group label {
     font-weight: bold;
     color: #495057;
+    display: flex;
+    align-items: center;
 }
 
-.date-selector-container input[type="date"] {
+.date-selector-group input[type="date"] {
     padding: 8px 12px;
     border-radius: 4px;
     border: 1px solid #ced4da;
     font-size: 1rem;
     color: #495057;
+    min-width: 170px;
 }
 
-.date-selector-container input[type="date"]:focus {
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.today-button {
-    margin-left: 15px;
+.show-latest-button {
     padding: 9px 15px;
     font-size: 0.95rem;
     color: #fff;
@@ -38,13 +29,21 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.today-button:hover {
+.show-latest-button:hover:not(:disabled) {
     background-color: #0056b3;
 }
 
-.today-button:focus {
+.show-latest-button:focus {
     outline: none;
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.show-latest-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }

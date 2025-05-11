@@ -1,3 +1,16 @@
+main {
+  flex-grow: 1;
+  padding: 20px 15px;
+  /* Aggiunto padding sopra e sotto */
+  width: 100%;
+  max-width: 1200px;
+  /* Larghezza massima per il contenuto principale */
+  margin: 0 auto;
+  /* Centra il blocco main */
+  box-sizing: border-box;
+  /* Include padding e border nella larghezza/altezza */
+}
+
 .App {
   background-color: white;
   color: #333;
@@ -11,6 +24,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .app-header {
   background-color: #282c34;
   padding: 20px;
@@ -36,4 +50,44 @@ main {
   color: #555;
   border-top: 1px solid #ddd;
   margin-top: 30px;
+}
+
+.controls-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.export-button {
+  padding: 9px 18px;
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  font-weight: bold;
+}
+
+.export-button:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.export-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.export-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.65;
 }

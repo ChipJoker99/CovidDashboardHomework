@@ -1,6 +1,7 @@
 import React from 'react';
-import type { RegionalData } from '../types/regionalData';
-import type { SortableField, SortOrder } from '../App';
+import type { RegionalData, SortableField, SortOrder } from '../types/regionalData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSort, faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
 import './RegionTable.css';
 
 interface RegionTableProps {
@@ -12,30 +13,30 @@ interface RegionTableProps {
   currentSortOrder: SortOrder;
 }
 
-const RegionTable: React.FC<RegionTableProps> = ({ 
-  data, 
-  isLoading, 
+const RegionTable: React.FC<RegionTableProps> = ({
+  data,
+  isLoading,
   error,
   onSort,
   currentSortBy,
   currentSortOrder
 }) => {
 
-  const getSortIndicator = (field: SortableField): string => {
+  const getSortIcon = (field: SortableField) => {
     if (currentSortBy === field) {
-      return currentSortOrder === 'asc' ? ' ▲' : ' ▼';
+      return currentSortOrder === 'asc' ? faSortUp : faSortDown;
     }
-    return '';
+    return faSort;
   };
 
   if (isLoading && data.length === 0 && !error) {
     return <div className="status-message">Loading data...</div>;
   }
-  
+
   if (error && (!isLoading || data.length === 0)) {
     return <div className="status-message error-message">Error: {error}</div>;
   }
-  
+
   if (!isLoading && !error && data.length === 0) {
     return <div className="status-message">No data available for the selected criteria.</div>;
   }
@@ -48,21 +49,23 @@ const RegionTable: React.FC<RegionTableProps> = ({
       <table className="region-table">
         <thead>
           <tr>
-            <th 
+            <th
               onClick={() => !isLoading && onSort('region_name')}
               className={`${currentSortBy === 'region_name' ? 'active' : ''} sortable ${isLoading ? 'disabled' : ''}`}
             >
-              Region Name{getSortIndicator('region_name')}
+              Region Name
+              <FontAwesomeIcon icon={getSortIcon('region_name')} className="sort-icon" />
             </th>
-            <th 
+            <th
               onClick={() => !isLoading && onSort('total_positive_cases')}
               className={`${currentSortBy === 'total_positive_cases' ? 'active' : ''} sortable ${isLoading ? 'disabled' : ''}`}
             >
-              Total Positive Cases{getSortIndicator('total_positive_cases')}
+              Total Positive Cases
+              <FontAwesomeIcon icon={getSortIcon('total_positive_cases')} className="sort-icon" />
             </th>
             <th>
-              Submission Date 
-            </th> 
+              Submission Date
+            </th>
           </tr>
         </thead>
         <tbody>

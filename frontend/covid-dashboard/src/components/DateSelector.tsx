@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDay, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 import './DateSelector.css';
 
 interface DateSelectorProps {
@@ -26,8 +28,11 @@ const DateSelector: React.FC<DateSelectorProps> = ({ onDateChange, initialDate }
   const maxDate = getTodayString();
 
   return (
-    <div className="date-selector-container">
-      <label htmlFor="report-date">Select Report Date: </label>
+    <div className="date-selector-group">
+      <label htmlFor="report-date">
+        <FontAwesomeIcon icon={faCalendarDay} style={{ marginRight: '8px' }} />
+        Select Report Date:
+      </label>
       <input
         type="date"
         id="report-date"
@@ -36,11 +41,11 @@ const DateSelector: React.FC<DateSelectorProps> = ({ onDateChange, initialDate }
         min={minDate}
         max={maxDate}
       />
-      <button onClick={handleShowToday} className="today-button">
+      <button onClick={handleShowToday} className="show-latest-button">
+        <FontAwesomeIcon icon={faSyncAlt} style={{ marginRight: '5px' }} />
         Show Latest Data
       </button>
     </div>
   );
 };
-
 export default DateSelector;
