@@ -3,9 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 import sys
 from app.core.config import settings
-from app.api.api_v1.endpoints import regions_router
-# EXORT ROUTER (FUTURE)
-# from app.api.api_v1.endpoints import export_router
+from app.api.api_v1.endpoints import regions_router, export_router
 
 # --- Logging Configuration---
 logging.basicConfig(
@@ -43,8 +41,7 @@ app.add_middleware(
 
 # --- API ROUTERs ---
 app.include_router(regions_router, prefix="/api/v1/regions", tags=["Regions"])
-# NEXT ROUTER EXPORT XLSX:
-# app.include_router(export_router, prefix="/api/v1/export", tags=["Export"])
+app.include_router(export_router, prefix="/api/v1/export", tags=["Export"])
 
 
 # --- Root Endpoints ---
