@@ -8,4 +8,4 @@ app = FastAPI(
 
 @app.get("/")
 async def read_root():
-    return {"message": "Welcome to the COVID-19 Data API!"}
+    return {"message": "Welcome to Italy's COVID-19 Data API!"}
