@@ -1,12 +1,16 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
+  background-color: white;
   color: #333;
-  min-height: 100vh;
+  text-align: center;
+  width: 80vw;
+  max-width: 800px;
+  min-height: 80vh;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
 }
-
 .app-header {
   background-color: #282c34;
   padding: 20px;

@@ -9,7 +9,7 @@ function App() {
   const [regionalData, setRegionalData] = useState<RegionalData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedDateString, setSelectedDateString] = useState<string | null>(null); 
+  const [selectedDateString, setSelectedDateString] = useState<string | null>(null);
 
   const fetchData = useCallback(async (dateString: string | null) => {
     setIsLoading(true);
@@ -36,7 +36,7 @@ function App() {
   const handleDateChange = (newDateString: string | null) => {
     setSelectedDateString(newDateString);
   };
-  
+
   const getTodayForSelector = () => new Date().toISOString().split('T')[0];
 
   return (
@@ -45,14 +45,15 @@ function App() {
         <h1>Italian COVID-19 Regional Data</h1>
       </header>
       <main>
-        <DateSelector 
-          onDateChange={handleDateChange} 
+        <DateSelector
+          onDateChange={handleDateChange}
           initialDate={selectedDateString || getTodayForSelector()}
         />
         <RegionTable data={regionalData} isLoading={isLoading} error={error} />
       </main>
       <footer className="app-footer">
         <p>Data sourced from Protezione Civile Italiana.</p>
+        <p>Data organized by <a href="https://github.com/ChipJoker99">ChipJoker99</a>.</p>
       </footer>
     </div>
   );
